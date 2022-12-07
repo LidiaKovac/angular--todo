@@ -1,0 +1,41 @@
+.todolist__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .single-todo__wrap {
+    width: 90%;
+    flex: 1 1 100px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    label {
+        position: relative;
+        display: flex;
+    }
+    input {
+        display: none;
+    }
+    .fake__checkbox {
+        width: 20px;
+        height: 20px;
+        background-color: #085EF8;
+        border-radius: 20px;
+    }
+    input:checked ~ .fake__checkbox::after {
+        content: "•";
+        color: white;
+        position: absolute;
+        left: 50%;
+    }
+    input+label {
+        font-size: large;
+    }
+    input:checked+label {
+        text-decoration: line-through;
+    }
+    .single-todo__author {
+        color: gray;
+        margin-top: 20px;
+    }
+  }
+}

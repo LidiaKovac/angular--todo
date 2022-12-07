@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodolistComponent } from './todolist/todolist.component';
+import { DateSubtitleComponent } from './date-subtitle/date-subtitle.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodolistComponent,
+    DateSubtitleComponent,
   ],
   imports: [
     BrowserModule,
@@ -15,4 +19,6 @@ import { AppComponent } from './app.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

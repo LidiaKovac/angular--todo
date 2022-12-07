@@ -1,0 +1,21 @@
+<div *ngIf="loading" class="loader">Loading</div>
+<div *ngIf="!loading" class="todolist__wrap">
+  <div *ngFor="let stodo of todo" class="single-todo__wrap">
+    <label htmlFor="{{ stodo.id }}">
+    {{ stodo.title }}
+    <input
+      (change)="handleChange(stodo.id, $event)"
+      type="checkbox"
+      id="{{ stodo.id }}"
+      [checked]="stodo.completed"
+    />
+    <div class="fake__checkbox"></div>
+    </label>
+    <div class="single-todo__author">{{ stodo.user }}</div>
+  </div>
+</div>
+
+<!-- {{}} => interpolazione -->
+<!-- eventi => (nome evento)='nome metodo', 
+    per passare l'evento nomeMetodo($event) -->
+<!-- [checked]=stodo.completed come funziona?? -->
