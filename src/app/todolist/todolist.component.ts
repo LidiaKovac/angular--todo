@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-todolist',
   templateUrl: './todolist.component.html',
-  styleUrls: ['./todolist.component.scss']
+  styleUrls: ['./todolist.component.min.css']
 })
 
 export class TodolistComponent implements OnInit {
@@ -16,7 +16,7 @@ export class TodolistComponent implements OnInit {
     try {
       this.setLoading(true)
       let res = await fetch("https://dummyjson.com/todos?limit=10")
-      let {todos} = await res.json()
+      let { todos } = await res.json()
       for (const single of todos) {
         let res = await fetch("https://dummyjson.com/users/" + single.userId)
         let { firstName, lastName } = await res.json()
@@ -36,7 +36,7 @@ export class TodolistComponent implements OnInit {
     let target = event.target as HTMLInputElement
     let found = this.todo.find((single) => single.id === id)!
     found.completed = target!.checked
-    
+
   }
 
 }
